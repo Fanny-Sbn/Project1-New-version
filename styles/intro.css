@@ -10,7 +10,7 @@
   body {
     font-family: 'Staatliches';
     background-color: #11242D;
-    background: url("../../img/virus-bg.jpg") no-repeat center center fixed;
+    background: url("../img/virus-bg.jpg") no-repeat center center fixed;
     background-size: cover;
   }
 
