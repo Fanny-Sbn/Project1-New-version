@@ -1,0 +1,395 @@
+@import url(https://fonts.googleapis.com/css?family=Staatliches);
+
+
+/*--------------
+----------------
+General presentation for minigames
+----------------
+----------------*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Staatliches';
+    background-color: black;
+}
+
+#content{
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    color: rgb(233, 243, 224);
+    overflow: hidden;
+    background: url("/img/virus-animation.png");
+    
+    animation: virus-animation 50s linear infinite;
+}
+
+@keyframes virus-animation {
+      
+    0%  {background-position: 0 0;}
+    100%  {background-position: -2000px 0;}
+}
+
+#container{
+    background-color: black;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: space-around;
+    border: 2px solid ;
+    border-color: rgb(233, 243, 224);
+    border-radius: 20px;
+}
+
+
+/*-----------------
+-------------------
+MINI GAME 1
+-------------------
+-------------------*/
+
+#header{
+    display:inline-block;
+    text-align: center;
+    font-size: 3vh;
+}
+
+#question-score{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+h1 {
+    color:rgb(233, 243, 224);
+    font-size: 3.5vw;
+    letter-spacing: 1vw;
+    font-weight: bold;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+#container2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: space-around;
+    font-size: 2vw;
+}
+
+#good{
+    color:rgb(162, 240, 162);
+}
+
+#bad{
+    color:rgb(255, 106, 106);
+}
+
+#false:hover{
+    box-shadow: 15px 10px 10px rgb(230, 67, 67);
+}
+
+.btn{
+    background-color:rgb(233, 243, 224);
+    border: none;
+    color: black;
+    box-shadow: 10px 5px 5px rgb(189, 212, 200);
+    padding: 15px 32px;
+    margin: 30px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2.2vw;
+    border-radius: 8px;
+}
+
+.btn:hover{
+    box-shadow: 15px 10px 10px rgb(10, 126, 62);
+    font-weight: bold;
+}
+
+#answer{
+    margin:10px;
+}
+
+#next{
+    background-color:rgb(233, 243, 224);
+    border: none;
+    color: black;
+    box-shadow: 10px 5px 5px rgb(189, 212, 200);
+    padding: 15px 32px;
+    margin: 30px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2.2vw;
+    border-radius: 8px;
+}
+
+/*---------------
+Progress bar - Immune system
+-----------------*/
+
+.immune-system-border{
+    border: solid 1px;
+    padding: 0;
+    height:7px;
+    width: 100px;
+}
+
+#immune-system{
+    padding: 0;
+    margin:0;
+    height:100%;
+    width:80%;
+    background:blue;
+}
+
+#immune{
+    display: flex;
+    align-items: center;
+}
+
+#pourcentage{
+    margin-left: 10px;
+}
+
+/*---------------
+Light effect
+----------------- */
+.light-good{
+	position: relative;
+}
+
+.light-bad{
+    position: relative;
+}
+
+.light-good::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	background: rgba(33, 243, 79, 0.5);
+	border-radius: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-animation: circle .75s;
+	animation: circle .75s;
+}
+
+.light-bad::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	background: rgba(247, 54, 20, 0.5);
+	border-radius: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-animation: circle .75s;
+	animation: circle .75s;
+}
+
+@-webkit-keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+
+/*------------------
+--------------------
+MINI-GAME 2
+--------------------
+--------------------*/
+
+#title-game{
+    font-size: 2vw;
+    background-color: transparent;
+    width: 80vw;
+}
+
+#container-minigame{
+    position: relative;
+    display:flex;
+    align-items: flex-end;
+    width: 80vw;
+    height: 80vh;
+    border: 2px solid ;
+    border-color: rgb(233, 243, 224);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+#img-points{
+    position:absolute;
+    left:80px;
+    top: 3px;
+}
+
+.virus-points{
+    height:30px;
+    width:30px;
+}
+
+.lose-points{
+    color:rgb(255, 106, 106);
+    margin-right:10px;
+}
+
+.win-points{
+    color:rgb(162, 240, 162);
+}
+
+#board-minigame{
+    position:absolute;
+    right:5px;
+    top:5px;
+}
+
+#display-game{
+    position:relative;
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    border-top: 1px solid;
+    border-color: rgb(233, 243, 224);
+    border-radius: 20px;
+    padding:5px;
+    text-align: center;
+}
+
+#nose {
+    height: 35px;
+    width: 35px;
+    grid-row: 15;
+    grid-column: 8;
+}
+.virus-purple{
+    height: 40px;
+    width:40px;
+    grid-row: 1;
+    grid-column: 5;
+}
+
+.virus-green{
+    height: 45px;
+    width: 45px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.virus-blue{
+    height: 50px;
+    width: 50px;
+    grid-row: 1;
+    grid-column: 12;
+}
+
+.antidote{
+    height: 50px;
+    width: 50px;
+    grid-row: 1;
+    grid-column: 8;
+}
+
+.game-over-or-next-game, .win{
+    display:none;
+}
+
+.game-over-or-next-game-display{
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    font-size: 5vw;
+}
+
+
+/*------------------
+--------------------
+MINI-GAME 3
+--------------------
+--------------------*/
+
+#title-game3{
+    font-size: 1.6vw;
+    font-weight: bold;
+    background-color: transparent;
+    width: 80vw;
+}
+
+#clock{
+    position:absolute;
+    left:15px;
+    top:5px;
+}
+
+/*-------Light effect virus-------*/
+.virus{
+    cursor: grab;
+    /*transition: all .2s ease;*/
+}
+
+.virus:hover{
+    background-color: gray;
+    border-radius: 50%;
+    color: white;
+    fill: white;
+}
+
+.virus:active{
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#video{
+    /*display: none;*/
+    height:100vh;
+    width:100vw;
+}
