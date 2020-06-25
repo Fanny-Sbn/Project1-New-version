@@ -16,6 +16,9 @@ export function listenGame2Events(nextRound) {
     const virusBlueHTML = document.getElementsByClassName("virus-blue")[0];
     const virusBlue2HTML = document.getElementsByClassName("virus-blue")[1];
     const antidoteHTML = document.getElementsByClassName("antidote")[0];
+    var wind = document.getElementById('wind');
+    var atchoum = document.getElementById("atchoum");
+    var death = document.getElementById("death");
     let minDec = document.getElementById('minDec');//timer
     let minUni = document.getElementById('minUni');//timer
     let secDec = document.getElementById('secDec');//timer
@@ -90,6 +93,7 @@ export function listenGame2Events(nextRound) {
                     immuneSystem.style.width = `${score}%`;
                     pourcentage.innerHTML = `${score}%`;
                 }
+                playAtchoum();
                 return false;
             } return true;
         }
@@ -115,6 +119,19 @@ export function listenGame2Events(nextRound) {
     let antidote = new VirusOrAntidote(5, 6, 10, 40, antidoteHTML);
 
     //FUNCTION DECLARATIONS
+
+    function startGame2() {
+        virusGreen.virusOrAntidoteMove();
+        virusGreen2.virusOrAntidoteMove();
+        virusPurple.virusOrAntidoteMove();
+        virusPurple2.virusOrAntidoteMove();
+        virusBlue.virusOrAntidoteMove();
+        virusBlue2.virusOrAntidoteMove();
+        antidote.virusOrAntidoteMove();
+        timer.startTimer(printTime, nextGame);
+        playWind();
+    }
+
     function moveNose() {
         switch (window.event.keyCode) {
             case 37: //left arrow
@@ -136,6 +153,26 @@ export function listenGame2Events(nextRound) {
         }
     };
 
+    function playWind() {
+        wind.play();
+    };
+
+    function stopWind() {
+        wind.pause();
+    };
+
+    function playAtchoum(){
+        atchoum.play();
+    }
+
+    function stopAtchoum(){
+        atchoum.pause();
+    }
+    
+    function playDeath(){
+        death.volume=0.05;
+        death.play();
+    }
 
     function nextGame() {
         nextGameElt.classList.remove("game-over-or-next-game");
@@ -148,6 +185,7 @@ export function listenGame2Events(nextRound) {
         virusBlue.stopMoving();
         virusBlue2.stopMoving();
         antidote.stopMoving();
+        stopWind();
     }
 
 
@@ -173,20 +211,13 @@ export function listenGame2Events(nextRound) {
             virusBlue.destroySelf();
             virusBlue2.destroySelf();
             antidote.destroySelf();
+            stopWind();
+            playDeath();
             return false;
         } return true;
     }
 
-    function startGame2() {
-        virusGreen.virusOrAntidoteMove();
-        virusGreen2.virusOrAntidoteMove();
-        virusPurple.virusOrAntidoteMove();
-        virusPurple2.virusOrAntidoteMove();
-        virusBlue.virusOrAntidoteMove();
-        virusBlue2.virusOrAntidoteMove();
-        antidote.virusOrAntidoteMove();
-        timer.startTimer(printTime, nextGame);
-    }
+    
 
     /*call collision function at all time*/
     function step(timestamp) {
@@ -201,7 +232,7 @@ export function listenGame2Events(nextRound) {
         if (noDelay === false) {
             window.setTimeout(() => {
                 requestAnimationFrame(step);
-            }, 2000);
+            }, 500);
         }
         else requestAnimationFrame(step);
     }

@@ -10,9 +10,9 @@
         </section>
 
         <div id="img-points">
-            <img class="virus-points" src="img/virus-green.png" alt="virus-green"> <span class="win-points">+2%</span>
-            <img class="virus-points" src="img/virus-purple.png" alt="virus-purple"> <span class="win-points">+5%</span>
-            <img class="virus-points" src="img/virus-blue.png" alt="virus-blue"> <span class="win-points">+7%</span>
+            <img class="virus-points" src="./img/virus-green.png" alt="virus-green"> <span class="win-points">+2%</span>
+            <img class="virus-points" src="./img/virus-purple.png" alt="virus-purple"> <span class="win-points">+5%</span>
+            <img class="virus-points" src="./img/virus-blue.png" alt="virus-blue"> <span class="win-points">+7%</span>
         </div>
 
         <div id="board-minigame">
@@ -24,14 +24,17 @@
                 <span id="pourcentage"></span>
             </div>
         </div>
+
+        <audio src="./audio/heartbeat.mp3" id="heartbeat"></audio>
+        <audio src="./audio/death.mp3" id="death"></audio>
         <div id="display-game">
-            <img class="virus virus-purple" src="img/virus-purple.png" alt="virus-purple">
-            <img class="virus virus-purple" src="img/virus-purple.png" alt="virus-purple">
-            <img class="virus virus-green" src="img/virus-green.png" alt="virus-green">
-            <img class="virus virus-green" src="img/virus-green.png" alt="virus-green">
-            <img class="virus virus-blue" src="img/virus-blue.png" alt="virus-blue">
-            <img class="virus virus-blue" src="img/virus-blue.png" alt="virus-blue">
-            <audio id="sound" src="audio/punch.mp3">
+            <img class="virus virus-purple" src="./img/virus-purple.png" alt="virus-purple">
+            <img class="virus virus-purple" src="./img/virus-purple.png" alt="virus-purple">
+            <img class="virus virus-green" src="./img/virus-green.png" alt="virus-green">
+            <img class="virus virus-green" src="./img/virus-green.png" alt="virus-green">
+            <img class="virus virus-blue" src="./img/virus-blue.png" alt="virus-blue">
+            <img class="virus virus-blue" src="./img/virus-blue.png" alt="virus-blue">
+            <audio id="sound" src="./audio/punch.mp3">
             </audio>
             <div class="game-over-or-next-game">Game Over <br>The virus killed you..
                 <button id="btn-play-again" class="btn">Play again</button>

@@ -13,6 +13,8 @@ export function listenGame3Events(nextRound) {
     const virusBlueHTML = document.getElementsByClassName("virus-blue")[0];
     const virusBlue2HTML = document.getElementsByClassName("virus-blue")[1];
     const virusAll = document.getElementsByClassName("virus");
+    var death = document.getElementById("death");
+    var heartbeat = document.getElementById("heartbeat");
     let minDec = document.getElementById('minDec');//timer
     let minUni = document.getElementById('minUni');//timer
     let secDec = document.getElementById('secDec');//timer
@@ -108,6 +110,7 @@ export function listenGame3Events(nextRound) {
         virusBlue.virusMove();
         virusBlue2.virusMove();
         timer.startTimer(printTime, goToEnd);
+        playHeartbeat();
         damageImmuneSystem();
         gameOver();
     }
@@ -134,6 +137,19 @@ export function listenGame3Events(nextRound) {
         sound.play();
     }
 
+    function playHeartbeat(){
+        heartbeat.play();
+    }
+
+    function stopHeartbeat(){
+        heartbeat.pause();
+    }
+
+    function playDeath(){
+        death.volume=0.05;
+        death.play();
+    }
+
     function gameOver() {
         if (score <= 1) {
             score = 0;
@@ -148,6 +164,8 @@ export function listenGame3Events(nextRound) {
             clearInterval(virusBlue2.intervalId);
             clearInterval(timer.intervalId);
             clearInterval(intervalIddamage);
+            stopHeartbeat();
+            playDeath();
             for (let i = 0; i < virusAll.length; i++) {
                 virusAll[i].style.display = "none";
             }
@@ -165,6 +183,7 @@ export function listenGame3Events(nextRound) {
         clearInterval(virusBlue.intervalId);
         clearInterval(virusBlue2.intervalId);
         clearInterval(intervalIddamage);
+        stopHeartbeat();
         for (let i = 0; i < virusAll.length; i++) {
             virusAll[i].style.display = "none";
         }
