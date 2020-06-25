@@ -96,5 +96,4 @@ export function listenGame1Events(nextRound) {
 
     //Display one statement when the page loads 
     pickStatement();
-
 }

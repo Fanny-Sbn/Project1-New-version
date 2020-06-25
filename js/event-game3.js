@@ -13,8 +13,10 @@ export function listenGame3Events(nextRound) {
     const virusBlueHTML = document.getElementsByClassName("virus-blue")[0];
     const virusBlue2HTML = document.getElementsByClassName("virus-blue")[1];
     const virusAll = document.getElementsByClassName("virus");
-    var death = document.getElementById("death");
-    var heartbeat = document.getElementById("heartbeat");
+    const death = document.getElementById("death");
+    const countdown = document.getElementById("countdown");
+    const heartbeat = document.getElementById("heartbeat");
+    const cheering = document.getElementById("cheering");
     let minDec = document.getElementById('minDec');//timer
     let minUni = document.getElementById('minUni');//timer
     let secDec = document.getElementById('secDec');//timer
@@ -150,6 +152,13 @@ export function listenGame3Events(nextRound) {
         death.play();
     }
 
+    function playCountdown(){
+        countdown.play();
+    }
+    function playCheering(){
+        cheering.play();
+    }
+
     function gameOver() {
         if (score <= 1) {
             score = 0;
@@ -184,6 +193,7 @@ export function listenGame3Events(nextRound) {
         clearInterval(virusBlue2.intervalId);
         clearInterval(intervalIddamage);
         stopHeartbeat();
+        playCheering();
         for (let i = 0; i < virusAll.length; i++) {
             virusAll[i].style.display = "none";
         }
@@ -193,38 +203,43 @@ export function listenGame3Events(nextRound) {
 
     /* EVENT LISTENERS */
     btnPlayAgain.onclick = function () { window.location.href = "index.html"; }; //Play again (go back to home page)
-    virusGreenHTML.addEventListener("click", function () {
-        playSoundVirusclicked();
-        virusGreen.virusClicked();
-    });
 
-    virusGreen2HTML.addEventListener("click", function () {
-        playSoundVirusclicked();
-        virusGreen.virusClicked();
-    });
-
-    virusPurpleHTML.addEventListener("click", function () {
-        playSoundVirusclicked();
-        virusPurple.virusClicked();
-    });
-
-    virusPurple2HTML.addEventListener("click", function () {
-        playSoundVirusclicked();
-        virusPurple2.virusClicked();
-    });
-
-    virusBlueHTML.addEventListener("click", function () {
-        playSoundVirusclicked();
-        virusBlue.virusClicked();
-    });
-
-    virusBlue2HTML.addEventListener("click", function () {
-        playSoundVirusclicked();
-        virusBlue2.virusClicked();
-    });
+    setTimeout(() => {
+        virusGreenHTML.addEventListener("click", function () {
+            playSoundVirusclicked();
+            virusGreen.virusClicked();
+        });
+    
+        virusGreen2HTML.addEventListener("click", function () {
+            playSoundVirusclicked();
+            virusGreen.virusClicked();
+        });
+    
+        virusPurpleHTML.addEventListener("click", function () {
+            playSoundVirusclicked();
+            virusPurple.virusClicked();
+        });
+    
+        virusPurple2HTML.addEventListener("click", function () {
+            playSoundVirusclicked();
+            virusPurple2.virusClicked();
+        });
+    
+        virusBlueHTML.addEventListener("click", function () {
+            playSoundVirusclicked();
+            virusBlue.virusClicked();
+        });
+    
+        virusBlue2HTML.addEventListener("click", function () {
+            playSoundVirusclicked();
+            virusBlue2.virusClicked();
+        });
+    }, 5000);
+    
 
     /*FUNCTIONS CALLS*/
     requestAnimationFrame(step2);
+    playCountdown();
 
     setTimeout(() => {
         startGame3();

@@ -16,9 +16,10 @@ export function listenGame2Events(nextRound) {
     const virusBlueHTML = document.getElementsByClassName("virus-blue")[0];
     const virusBlue2HTML = document.getElementsByClassName("virus-blue")[1];
     const antidoteHTML = document.getElementsByClassName("antidote")[0];
-    var wind = document.getElementById('wind');
-    var atchoum = document.getElementById("atchoum");
-    var death = document.getElementById("death");
+    const wind = document.getElementById('wind');
+    const atchoum = document.getElementById("atchoum");
+    const death = document.getElementById("death");
+    const countdown = document.getElementById("countdown");
     let minDec = document.getElementById('minDec');//timer
     let minUni = document.getElementById('minUni');//timer
     let secDec = document.getElementById('secDec');//timer
@@ -157,6 +158,10 @@ export function listenGame2Events(nextRound) {
         wind.play();
     };
 
+    function playCountdown(){
+        countdown.play();
+    }
+
     function stopWind() {
         wind.pause();
     };
@@ -168,7 +173,7 @@ export function listenGame2Events(nextRound) {
     function stopAtchoum(){
         atchoum.pause();
     }
-    
+
     function playDeath(){
         death.volume=0.05;
         death.play();
@@ -260,7 +265,7 @@ export function listenGame2Events(nextRound) {
     var requestID;
     requestID = requestAnimationFrame(step);
     requestAnimationFrame(step2);
-
+    playCountdown();
     setTimeout(() => {
         startGame2();
     }, 5000); // wait 5 seconds before the game starts

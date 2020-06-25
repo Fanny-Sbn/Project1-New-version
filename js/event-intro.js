@@ -3,6 +3,7 @@ export function listenIntroEvents(nextRound) {
     const gameInfo = document.querySelector(".game-info-page");
     const trigger = document.querySelector(".trigger");
     const closeBtn = document.querySelector(".close-btn");
+    
 
     function toggleGameInfo() {
         gameInfo.classList.toggle("display-game-info");
