@@ -32,7 +32,7 @@ const states = [
 var index = 0;
 
 function displayView(html) {
-  if (index > 0) document.getElementById("dynamic-css").setAttribute("href", states[index].css);
+  document.getElementById("dynamic-css").setAttribute("href", states[index].css);
   document.getElementById("board").innerHTML = html;
   states[index].js(loadPage); // loadPage va être rappelé
   index++;
