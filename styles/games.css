@@ -1,6 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Staatliches);
-
-
+@font-face{
+    font-family: "Staatliches";
+    src: url("./../font/Staatliches-Regular.woff2") format('woff2');
+    font-style: normal;
+}
 /*--------------
 ----------------
 General presentation for minigames

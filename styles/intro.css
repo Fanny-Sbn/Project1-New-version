@@ -1,5 +1,8 @@
-
-  @import url(https://fonts.googleapis.com/css?family=Staatliches);
+@font-face{
+    font-family: "Staatliches";
+    src: url("./../font/Staatliches-Regular.woff2") format('woff2');
+    font-style: normal;
+}
 
   * {
     padding: 0;
@@ -8,9 +11,9 @@
   }
 
   body {
-    font-family: 'Staatliches';
+    font-family: "Staatliches";
     background-color: #11242D;
-    background: url("./../img/virus-bg.jpg") no-repeat center center fixed;
+    background: url("./../img/virus-bg-2.jpg") no-repeat center center fixed;
     background-size: cover;
   }
 

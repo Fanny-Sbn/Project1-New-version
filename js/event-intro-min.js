@@ -1,0 +1,1 @@
+export function listenIntroEvents(e){const t=document.getElementById("start"),n=document.querySelector(".game-info-page"),o=document.querySelector(".trigger"),c=document.querySelector(".close-btn");function l(){n.classList.toggle("display-game-info")}o.onclick=l,c.onclick=l,t.onclick=(()=>e(1))}

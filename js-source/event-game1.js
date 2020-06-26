@@ -1,4 +1,4 @@
-import { facts } from "./data-game1.js";
+import { facts } from "../js/data-game1.js";
 export function listenGame1Events(nextRound) {
 
     //GET HTML ELEMENTS 

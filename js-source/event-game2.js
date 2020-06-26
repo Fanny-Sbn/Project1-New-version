@@ -1,5 +1,5 @@
-import { Timer } from "./timer.js";
-import { playSound, stopSound,playLowSound } from "./sound-functions.js";
+import { Timer } from "../js/timer.js";
+import { playSound, stopSound,playLowSound } from "../js/sound-functions.js";
 export function listenGame2Events(nextRound) {
 
     //GET HTML ELEMENTS

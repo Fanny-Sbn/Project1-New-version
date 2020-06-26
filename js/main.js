@@ -1,8 +1,8 @@
 import { pageLoader } from "./page-loader.js";
-import { listenIntroEvents } from "./event-intro.js";
-import { listenGame1Events } from "./event-game1.js";
-import { listenGame2Events } from "./event-game2.js";
-import { listenGame3Events } from "./event-game3.js";
+import { listenIntroEvents } from "./event-intro-min.js";
+import { listenGame1Events } from "./event-game1-min.js";
+import { listenGame2Events } from "./event-game2-min.js";
+import { listenGame3Events } from "./event-game3-min.js";
 
 // GAME VARS
 const states = [

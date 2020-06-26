@@ -1,5 +1,5 @@
-import { Timer } from "./timer.js";
-import { playSound, stopSound,playLowSound } from "./sound-functions.js";
+import { Timer } from "../js/timer.js";
+import { playSound, stopSound,playLowSound } from "../js/sound-functions.js";
 export function listenGame3Events(nextRound) {
     //GET HTML ELEMENTS
     const immuneSystem = document.getElementById("immune-system");
@@ -173,7 +173,7 @@ export function listenGame3Events(nextRound) {
         clearInterval(virusBlue.intervalId);
         clearInterval(virusBlue2.intervalId);
         clearInterval(intervalIddamage);
-        stopHeartbeat();
+        stopSound(heartbeat);
         playSound(cheering);
         for (let i = 0; i < virusAll.length; i++) {
             virusAll[i].style.display = "none";
