@@ -24,7 +24,7 @@ General presentation for minigames
     background-color: black;
     color: rgb(233, 243, 224);
     overflow: hidden;
-    background: url("/img/virus-animation.png");
+    background: url("./../img/virus-animation.png");
     
     animation: virus-animation 50s linear infinite;
 }

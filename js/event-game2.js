@@ -1,4 +1,5 @@
 import { Timer } from "./timer.js";
+import { playSound, stopSound,playLowSound } from "./sound-functions.js";
 export function listenGame2Events(nextRound) {
 
     //GET HTML ELEMENTS
@@ -94,7 +95,7 @@ export function listenGame2Events(nextRound) {
                     immuneSystem.style.width = `${score}%`;
                     pourcentage.innerHTML = `${score}%`;
                 }
-                playAtchoum();
+                playSound(atchoum);
                 return false;
             } return true;
         }
@@ -130,7 +131,7 @@ export function listenGame2Events(nextRound) {
         virusBlue2.virusOrAntidoteMove();
         antidote.virusOrAntidoteMove();
         timer.startTimer(printTime, nextGame);
-        playWind();
+        playSound(wind);
     }
 
     function moveNose() {
@@ -154,31 +155,6 @@ export function listenGame2Events(nextRound) {
         }
     };
 
-    function playWind() {
-        wind.play();
-    };
-
-    function playCountdown(){
-        countdown.play();
-    }
-
-    function stopWind() {
-        wind.pause();
-    };
-
-    function playAtchoum(){
-        atchoum.play();
-    }
-
-    function stopAtchoum(){
-        atchoum.pause();
-    }
-
-    function playDeath(){
-        death.volume=0.05;
-        death.play();
-    }
-
     function nextGame() {
         nextGameElt.classList.remove("game-over-or-next-game");
         nextGameElt.classList.add("game-over-or-next-game-display");
@@ -190,7 +166,7 @@ export function listenGame2Events(nextRound) {
         virusBlue.stopMoving();
         virusBlue2.stopMoving();
         antidote.stopMoving();
-        stopWind();
+        stopSound(wind);
     }
 
 
@@ -216,8 +192,8 @@ export function listenGame2Events(nextRound) {
             virusBlue.destroySelf();
             virusBlue2.destroySelf();
             antidote.destroySelf();
-            stopWind();
-            playDeath();
+            stopSound(wind);
+            playLowSound(death);
             return false;
         } return true;
     }
@@ -265,7 +241,7 @@ export function listenGame2Events(nextRound) {
     var requestID;
     requestID = requestAnimationFrame(step);
     requestAnimationFrame(step2);
-    playCountdown();
+    playSound(countdown);
     setTimeout(() => {
         startGame2();
     }, 5000); // wait 5 seconds before the game starts

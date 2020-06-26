@@ -1,4 +1,5 @@
 import { Timer } from "./timer.js";
+import { playSound, stopSound,playLowSound } from "./sound-functions.js";
 export function listenGame3Events(nextRound) {
     //GET HTML ELEMENTS
     const immuneSystem = document.getElementById("immune-system");
@@ -112,7 +113,7 @@ export function listenGame3Events(nextRound) {
         virusBlue.virusMove();
         virusBlue2.virusMove();
         timer.startTimer(printTime, goToEnd);
-        playHeartbeat();
+        playSound(heartbeat);
         damageImmuneSystem();
         gameOver();
     }
@@ -139,26 +140,6 @@ export function listenGame3Events(nextRound) {
         sound.play();
     }
 
-    function playHeartbeat(){
-        heartbeat.play();
-    }
-
-    function stopHeartbeat(){
-        heartbeat.pause();
-    }
-
-    function playDeath(){
-        death.volume=0.05;
-        death.play();
-    }
-
-    function playCountdown(){
-        countdown.play();
-    }
-    function playCheering(){
-        cheering.play();
-    }
-
     function gameOver() {
         if (score <= 1) {
             score = 0;
@@ -173,8 +154,8 @@ export function listenGame3Events(nextRound) {
             clearInterval(virusBlue2.intervalId);
             clearInterval(timer.intervalId);
             clearInterval(intervalIddamage);
-            stopHeartbeat();
-            playDeath();
+            stopSound(heartbeat);
+            playLowSound(death);
             for (let i = 0; i < virusAll.length; i++) {
                 virusAll[i].style.display = "none";
             }
@@ -193,7 +174,7 @@ export function listenGame3Events(nextRound) {
         clearInterval(virusBlue2.intervalId);
         clearInterval(intervalIddamage);
         stopHeartbeat();
-        playCheering();
+        playSound(cheering);
         for (let i = 0; i < virusAll.length; i++) {
             virusAll[i].style.display = "none";
         }
@@ -239,7 +220,7 @@ export function listenGame3Events(nextRound) {
 
     /*FUNCTIONS CALLS*/
     requestAnimationFrame(step2);
-    playCountdown();
+    playSound(countdown);
 
     setTimeout(() => {
         startGame3();
