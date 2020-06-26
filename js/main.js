@@ -30,9 +30,10 @@ const states = [
 
 // INITIAL GAME LOGIC
 var index = 0;
+
 function displayView(html) {
-  document.getElementById("board").innerHTML = html;
   document.getElementById("dynamic-css").href = states[index].css;
+  document.getElementById("board").innerHTML = html;
   states[index].js(loadPage); // loadPage va être rappelé
   index++;
 }
