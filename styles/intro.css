@@ -27,6 +27,12 @@
     align-content: space-around;
   }
 
+
+  #board.loading {
+    height: 100vh;
+    background: black;
+  }
+
   h1 {
     color: rgb(189, 212, 200);
     font-size: 8.5vw;

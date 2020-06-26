@@ -1,3 +1,172 @@
+<style>
+  @font-face{
+    font-family: "Staatliches";
+    src: url("./../font/Staatliches-Regular.woff2") format('woff2');
+    font-style: normal;
+}
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Staatliches";
+    background-color: #11242D;
+    background: url("./../img/virus-bg-2.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  #container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-around;
+  }
+
+
+  #board.loading {
+    height: 100vh;
+    background: black;
+  }
+
+  h1 {
+    color: rgb(189, 212, 200);
+    font-size: 8.5vw;
+    letter-spacing: 1vw;
+    font-weight: bold;
+    text-shadow: 5px 5px #000;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #presentation p {
+    color: rgb(189, 212, 200);
+    font-size: 5.5vw;
+    font-weight: bold;
+    text-shadow: 3px 3px rgb(0, 0, 0);
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 1vw;
+    animation:
+      typing 5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+
+  .btns-container {
+    width: 80vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn {
+    background-color: rgb(189, 212, 200);
+    border: none;
+    color: black;
+    box-shadow: 10px 5px 5px rgb(189, 212, 200);
+    padding: 15px 32px;
+    margin: 30px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2.2vw;
+    border-radius: 8px;
+  }
+
+  .btn:hover {
+    box-shadow: 15px 10px 10px rgb(10, 126, 62);
+    font-weight: bold;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0
+    }
+
+    to {
+      width: 100%
+    }
+  }
+
+  /*
+=====
+Game Info
+=====
+*/
+
+  .game-info-page {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    visibility: hidden;
+  }
+
+  .game-info-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(189, 212, 200);
+    text-align: center;
+    background-color: #11242D;
+    padding: 1rem 1.5rem;
+    width: 35rem;
+    border-radius: 0.5rem;
+  }
+
+  .game-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .game-info p {
+    color: #f1eece;
+    margin: 5px;
+  }
+
+  .title-game-info{
+    margin-top:10px;
+    color:white;
+    letter-spacing: 0.2em;
+  }
+
+  .close-btn {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: 0.25rem;
+    color: #000;
+    background-color: #fff;
+  }
+
+  .close-btn:hover {
+    color: #fff;
+    background-color: red;
+  }
+
+  .display-game-info {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
 <div id="container">
   <div id="presentation">
     <h1 id="big-title">Virus Invasion</i></h1>
